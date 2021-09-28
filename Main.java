@@ -15,16 +15,24 @@ public class Main {
 
 		System.out.println("Hello " + firstname + " " + lastname);
 
-		System.out.println("Enter number 1");
-		String num1 = scanner.nextLine();
-		Float x = Float.parseFloat(num1);
+		//q 4
+		System.out.println("Enter as many numbers as you want. enter 0 to show the sum");
+		String numin = scanner.nextLine();
 		
-		System.out.println("Enter number 2");
-		String num2 = scanner.nextLine();
-		Float x2 = Float.parseFloat(num2);
-
-		System.out.println(x + x2);
-
+		Float total = Float.parseFloat(numin);
+		
+		
+		while(true) {
+			numin = scanner.nextLine();
+			Float price = Float.parseFloat(numin);
+			if (price == 0f) break;
+			total = total + price;
+		}
+		
+		System.out.println(total);
+		
+		//end q4
+		
 		System.out.println("please enter your birth year");
 		Integer year = Integer.parseInt(scanner.nextLine());
 		System.out.println("Age:");
@@ -43,6 +51,8 @@ public class Main {
 		} else if (currency.contentEquals("PLN")) {
 			System.out.println(pnd + " " + "Pounds is " + pnd * 5.39 +" "+ "Zloty");
 		}
+		
+		//Death calculation
 		
 	}
 }
