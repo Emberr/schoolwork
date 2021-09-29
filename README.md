@@ -1,2 +1,2 @@
 # My Schoolwork 
-All the projects/coding i have dont in school or for school.
+All the projects/coding i have done in school or for school.
