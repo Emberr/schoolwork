@@ -30,16 +30,6 @@ public class tasks2 {
 
 		System.out.println(sb);
 
-		//question 7
-		for(int i = 1000; i <= 9999; i++) {
-			if(i % 10 != i / 1000)
-			continue;
-			int num = i / 10;
-			num %= 100;
-			if(num / 10 == num % 10)
-			System.out.println(i);
-		}
-
 
 
 	}
