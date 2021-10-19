@@ -16,16 +16,16 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 
 		String input = scanner.nextLine();
-		Integer noFrog = Integer.parseInt(input);
+		Integer numFrog = Integer.parseInt(input);
 
-		if (frog[noFrog] == 'R') {
-			frog[noFrog-1] = frog[noFrog];
-			frog[noFrog] = ' ';
+		if (frog[numFrog] == 'R') {
+			frog[numFrog-1] = frog[numFrog];
+			frog[numFrog] = ' ';
 		}
 
-		if (frog[noFrog] == 'G') {
-			frog[noFrog+1] = frog[noFrog];
-			frog[noFrog] = ' ';
+		if (frog[numFrog] == 'G') {
+			frog[numFrog+1] = frog[numFrog];
+			frog[numFrog] = ' ';
 		}
 
 		//print array
