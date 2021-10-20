@@ -10,8 +10,14 @@ import javax.swing.JPanel;
 
 public class Graphics1 extends JPanel {
 
-	int x = 0;
-	int y = 0;
+	int[] xs = new int [100];
+	int[] ys = new int [100];
+	
+	int numEntries = 0;
+	
+	
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		JFrame frame = new JFrame();
@@ -23,21 +29,28 @@ public class Graphics1 extends JPanel {
 		setPreferredSize(new Dimension(600,600));
 		MouseListener mickey = new MouseAdapter() {
 			public void mouseClicked(MouseEvent event) {
-				 x = event.getX();
-				 y = event.getY();
-				repaint();
+				 xs[numEntries] = event.getX();
+				 
+				 ys[numEntries] = event.getY();
+				 numEntries = numEntries += 1;
+				
 			}
 		};
 		addMouseListener(mickey);
 
 	}
+		
 
-
+		
+		
 	public void paintComponent(Graphics g) {
 		g.setColor(Color.black);
 		g.fillRect(0, 0, 600,600);
 		g.setColor(Color.red);
-		g.fillRect(x, y, 50, 50);
+		for (int i =0; i < numEntries; i += 1) {
+			g.fillRect(xs[i], ys[i], 5, 5);
+		}
+		repaint();
 	}
 }
 
