@@ -1,7 +1,6 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -11,23 +10,20 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class Graphics1 extends JPanel {
-	Image background;
+public class Graphics3 extends JPanel {
 	final int NUM_POINTS = 1000;
-	int[] xs = new int[NUM_POINTS];
-	int[] ys = new int[NUM_POINTS];
+	Dot[] dots = new Dot[NUM_POINTS];
 	int numClicks = 0;
-	int counter = 0;
 	
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
-		frame.setContentPane(new Graphics1());
+		frame.setContentPane(new Graphics3());
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setVisible(true);
 	}
 	
-	Graphics1() {
+	Graphics3() {
 		setPreferredSize(new Dimension(600, 600));
 		
 		MouseMotionListener mickeyMotion = new MouseMotionListener() {
@@ -36,8 +32,10 @@ public class Graphics1 extends JPanel {
 			}
 
 			public void mouseMoved(MouseEvent event) {
-				xs[numClicks] = event.getX();
-				ys[numClicks] = event.getY();
+				Dot dot = new Dot(); // Creates a new Dot object in memory
+				dot.x = event.getX(); // Set the x coordinate of the new object
+				dot.y = event.getY(); // Set the y coordinate
+				dots[numClicks] = dot; // Store the new Dot object into the dots array
 				numClicks += 1;
 				if (numClicks == NUM_POINTS) numClicks = 0;
 
@@ -48,7 +46,9 @@ public class Graphics1 extends JPanel {
 		ActionListener timerListener = new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				for (int i = 0; i != NUM_POINTS; i += 1) {
-					ys[i] += 1;
+					if (dots[i] != null) {
+						dots[i].y += 1;
+					}
 				}
 				repaint();
 			}
@@ -63,7 +63,9 @@ public class Graphics1 extends JPanel {
 		g.setColor(Color.WHITE);
 		
 		for (int i = 0; i < NUM_POINTS; i += 1) {
-			g.fillRect(xs[i],  (int)ys[i], 10, 10);
+			if (dots[i] != null) {
+				g.fillRect(dots[i].x,  dots[i].y, 10, 10);
+			}
 		}
 	}
 }
