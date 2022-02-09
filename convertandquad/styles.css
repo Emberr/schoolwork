@@ -1,0 +1,137 @@
+* {
+    margin: 0px;
+    padding: 5px;
+    letter-spacing: 1px;
+    -webkit-font-smoothing: none;
+   
+
+}
+
+
+
+body {
+   
+    background-color: #703e3e;
+    color: #c1b492;
+
+
+}
+
+.back {
+    color: #703e3e;
+    background-color: antiquewhite;
+    border: none;
+    display: inline-block;
+
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+a:link {
+    color: #c1b492;
+}
+
+a:visited {
+    color: #c1b492;
+}
+
+a:hover {
+    color: #703e3e;
+    animation: wiredB2 1s ease-out infinite;
+
+}
+
+a:active {
+    color: #703e3e;
+}
+
+h1 {
+    font-size: 20px;
+    font-family: Times, "Times New Roman", serif;
+    font-weight: normal;
+    clear: both;
+}
+
+h6 {
+    font-size: 9px;
+}
+
+hr {
+
+    border-color: #703e3e;
+    border-bottom-width: 2px;
+}
+
+.article {
+    width: 900px;
+    background-color: black;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    box-shadow: black 0px 5px 10px;
+    text-align: center;
+    letter-spacing: 8px;
+    font-size: 15px;
+    padding-top: 20px;
+
+
+}
+
+.article p {
+    margin: 20px;
+    font-size: 15px;
+
+
+}
+
+.date {
+    font-size: 9px;
+    line-height: 0px;
+    margin: 0px;
+
+}
+
+.author {
+    font-size: 13px;
+    line-height: 40px;
+    margin: 0px;
+
+}
+
+h5 {
+    font-weight: normal;
+}
+
+b {
+    color: #703e3e;
+    font-weight: normal;
+
+}
+
+@keyframes blink {
+    50% {
+        color: black;
+    }
+}
+
+@keyframes wiredB {
+    50% {
+        color: #703e3e;
+        text-shadow: #703e3e 1px 4px 5px;
+    }
+}
+
+@keyframes wiredB2 {
+    50% {
+        color: #c1b492;
+        text-shadow: #c1b492 1px 1px 6px;
+    }
+}
