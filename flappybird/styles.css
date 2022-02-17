@@ -1,0 +1,17 @@
+body {
+    background-color: darksalmon;
+}
+
+img {
+    display: none;
+}
+
+canvas {
+    width: 489px;  
+}
+
+canvas {
+    image-rendering: pixelated;
+    
+  }
+  
